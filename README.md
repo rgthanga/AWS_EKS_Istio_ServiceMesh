@@ -13,7 +13,7 @@ kubectl exec -it client -n backend  -- sh
 while true; do curl http://ss-app.staging:8080/api/devices && echo "" && sleep 1; done
 
 ## Check the service accessibility
-curl --header "Host: app.devopsbyexample.com" http://a452005df59a84ee4bf08fd07236bd96-2027597711.us-west-2.elb.amazonaws.com/api/devices 
+curl --header "Host: app.devopsbyexample.com" http://a452005df59a84ee4bf08fd07236bd96-2027597711.us-east-2.elb.amazonaws.com/api/devices 
 
 ## Windows 
-Invoke-WebRequest -Uri "http://a452005df59a84ee4bf08fd07236bd96-2027597711.us-west-2.elb.amazonaws.com/api/devices" -Headers @{"Host"="app.devopsbyexample.com"}
+Invoke-WebRequest -Uri "http://a452005df59a84ee4bf08fd07236bd96-2027597711.us-east-2.elb.amazonaws.com/api/devices" -Headers @{"Host"="app.devopsbyexample.com"}

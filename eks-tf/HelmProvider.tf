@@ -28,6 +28,15 @@ data "aws_eks_cluster_auth" "eks" {
   depends_on = [aws_eks_cluster.demo]
 }
 
+terraform {
+  required_providers {
+    helm = {
+      source  = "hashicorp/helm"
+      version = ">= 2.0.0"
+    }
+  }
+}
+
 provider "helm" {
   kubernetes {
     host                   = data.aws_eks_cluster.eks.endpoint
